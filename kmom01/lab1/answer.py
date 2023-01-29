@@ -14,7 +14,7 @@ https://github.com/dbwebb-se/lab
 """
 
 from dbwebb import Dbwebb
-from classes import cat
+from classes import cat, duration
 
 # pylint: disable=invalid-name
 
@@ -72,7 +72,7 @@ cat1 = cat("blue", "Misty", 5)
 ANSWER = str(cat1)
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("1.1", ANSWER, True)
+dbwebb.assert_equal("1.1", ANSWER, False)
 
 # """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Exercise 1.2 (1 points)
@@ -179,17 +179,16 @@ dbwebb.assert_equal("1.5", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+cat2 = cat("red", "Lilly", -1)
+list1 = [cat1.description(), cat2.description()]
 
-cat2 = cat("red", "Lilly", 4)
+ans16 =  f"{list1[0]} {list1[1]}"
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = ans16
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("1.6", ANSWER, True)
+dbwebb.assert_equal("1.6", ANSWER, False)
 
 # """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Exercise 1.7 (1 points)
@@ -214,12 +213,10 @@ dbwebb.assert_equal("1.6", ANSWER, True)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+duration1 = duration("30", "06", "13")
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = duration1.display()
 
 # I will now test your answer - change false to true to get a hint.
 dbwebb.assert_equal("1.7", ANSWER, False)
@@ -238,15 +235,13 @@ dbwebb.assert_equal("1.7", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+duration1 = duration(30, 6, 13)
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = duration1.duration_to_sec(duration1.display())
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("1.8", ANSWER, False)
+dbwebb.assert_equal("1.8", ANSWER, True)
 
 # --------------------------------------------------------------------------
 # Section 2. Overriding methods
@@ -270,12 +265,11 @@ dbwebb.assert_equal("1.8", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+duration2 = duration(40, 21, 1)
 
 
 
-
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = duration1 + duration2
 
 # I will now test your answer - change false to true to get a hint.
 dbwebb.assert_equal("2.1", ANSWER, False)
@@ -298,15 +292,19 @@ dbwebb.assert_equal("2.1", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+duration3 = duration(7, 11, 34)
+
+print("diration2: ", duration2)
+print("duration3: ", duration3)
+duration2 += duration3
 
 
 
 
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = duration2
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("2.2", ANSWER, False)
+dbwebb.assert_equal("2.2", ANSWER, True)
 
 # --------------------------------------------------------------------------
 # Section 3. Extra assignments
