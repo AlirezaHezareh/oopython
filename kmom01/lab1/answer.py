@@ -14,7 +14,7 @@ https://github.com/dbwebb-se/lab
 """
 
 from dbwebb import Dbwebb
-from classes import cat, duration
+from classes import Cat ,Duration
 
 # pylint: disable=invalid-name
 
@@ -30,7 +30,7 @@ dbwebb.ready_to_begin()
 # the [Python documentation](https://docs.python.org/3/library/index.html).
 # Here you will find everything this lab will go through and much more.
 #
- 
+
 
 
 # --------------------------------------------------------------------------
@@ -60,11 +60,11 @@ dbwebb.ready_to_begin()
 # Give the object the eye color "blue" and the name "Misty".
 #
 # Use the attributes `eye_color` and `name` from the object to create and
-# answer with the string "My cat's name is `name` and has `eye_color` eyes.".
+# answer with the string "My Cat's name is `name` and has `eye_color` eyes.".
 #
 # Write your code below and put the answer into the variable ANSWER.
 #
-cat1 = cat("blue", "Misty", 5)
+cat1 = Cat("blue", "Misty", 5)
 
 
 
@@ -91,7 +91,7 @@ dbwebb.assert_equal("1.1", ANSWER, False)
 #
 
 
-cat1 = cat("blue", "Misty", 5)
+cat1 = Cat("blue", "Misty", 5)
 toAnswer = cat1.lives_left
 
 
@@ -107,7 +107,7 @@ dbwebb.assert_equal("1.2", ANSWER, False)
 # Exercise 1.3 (1 points)
 #
 # Create a new method in the Cat class, called `description`. The method
-# should return the string "My cat's name is `name`, has `eye_color` eyes and
+# should return the string "My Cat's name is `name`, has `eye_color` eyes and
 # `lives_left` lives left to live.".
 #
 # Answer with the result returned from `cat1.description()`.
@@ -129,7 +129,7 @@ dbwebb.assert_equal("1.3", ANSWER, False)
 # Exercise 1.4 (1 points)
 #
 # Create a static attribute in the Cat class, "nr_of_paws", that contains the
-# number of paws a cat have.
+# number of paws a Cat have.
 # Assign its value to `4` in the declaration.
 #
 # Answer with the string "`cat1.name` has `cat1.nr_of_paws` paws.".
@@ -150,16 +150,16 @@ dbwebb.assert_equal("1.4", ANSWER, False)
 #
 # In the code below assign `2` to cat1's nr_of_paws.
 #
-# Answer with the string "`cat1.name` has `cat1.nr_of_paws` paws but cats
+# Answer with the string "`cat1.name` has `cat1.nr_of_paws` paws but Cats
 # have `Cat.nr_of_paws` paws.".
 #
 # Write your code below and put the answer into the variable ANSWER.
-#cat1 = cat("blue", "Misty", 5)
+#cat1 = Cat("blue", "Misty", 5)
 
 cat1.nr_of_paws = 2
-ans15 = f"{cat1.name} has {cat1.nr_of_paws} paws but cats have {cat.nr_of_paws} paws."
+ans15 = f"{cat1.name} has {cat1.nr_of_paws} paws but Cats have {Cat.nr_of_paws} paws."
 
-ANSWER = f"{cat1.name} has {cat1.nr_of_paws} paws but cats have {cat.nr_of_paws} paws."
+ANSWER = f"{cat1.name} has {cat1.nr_of_paws} paws but cats have {Cat.nr_of_paws} paws."
 
 # I will now test your answer - change false to true to get a hint.
 dbwebb.assert_equal("1.5", ANSWER, False)
@@ -167,11 +167,11 @@ dbwebb.assert_equal("1.5", ANSWER, False)
 # """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Exercise 1.6 (1 points)
 #
-# Create a new variable called `cat2` and initiate it with a new Cat object.
-# Give cat2 the name "Lilly" and eye color "red".
+# Create a new variable called `Cat2` and initiate it with a new Cat object.
+# Give Cat2 the name "Lilly" and eye color "red".
 #
-# Put cat1 and cat2 variables in a list. Iterate through the list and
-# concatenate the result from their description methods together in a string,
+# Put cat1 and Cat2 variables in a list. Iterate through the list and
+# conCatenate the result from their description methods together in a string,
 # with a space seperation the two strings.
 #
 # Answer with the string.
@@ -179,8 +179,8 @@ dbwebb.assert_equal("1.5", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
-cat2 = cat("red", "Lilly", -1)
-list1 = [cat1.description(), cat2.description()]
+Cat2 = Cat("red", "Lilly", -1)
+list1 = [cat1.description(), Cat2.description()]
 
 ans16 =  f"{list1[0]} {list1[1]}"
 
@@ -201,7 +201,7 @@ dbwebb.assert_equal("1.6", ANSWER, False)
 # Add a parameter for each attribute to the method heading and assign each
 # parameter to respective attribute.
 #
-# Add the method `display` to the class, it should return the duration as a
+# Add the method `display` to the class, it should return the Duration as a
 # string with the format "hh-mm-ss".
 # Numbers below 10 should have a leading zero in the string.
 #
@@ -213,7 +213,7 @@ dbwebb.assert_equal("1.6", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
-duration1 = duration("30", "06", "13")
+duration1 = Duration(30,6,13)
 
 
 ANSWER = duration1.display()
@@ -227,7 +227,7 @@ dbwebb.assert_equal("1.7", ANSWER, False)
 # Create a static method in the Duration class, name it `duration_to_sec`.
 # The method should take one argument, a string in the format as the one
 # `display` returns, "hh-mm-ss".
-# The method should return the duration it represents converted to number of
+# The method should return the Duration it represents converted to number of
 # seconds.
 #
 # Answer with `Duration.duration_to_sec(duration1.display())`.
@@ -235,13 +235,13 @@ dbwebb.assert_equal("1.7", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
-duration1 = duration(30, 6, 13)
+duration1 = Duration(30,6,13)
 
 
 ANSWER = duration1.duration_to_sec(duration1.display())
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("1.8", ANSWER, True)
+dbwebb.assert_equal("1.8", ANSWER, False)
 
 # --------------------------------------------------------------------------
 # Section 2. Overriding methods
@@ -255,7 +255,7 @@ dbwebb.assert_equal("1.8", ANSWER, True)
 # Exercise 2.1 (1 points)
 #
 # Overload the `add operator(+)` in the Duration class.
-# It should return the duration of two objects added together, in seconds.
+# It should return the Duration of two objects added together, in seconds.
 #
 # Initialize a new Duration object to a variable called `duration2` , give it
 # hours `40`, minutes `21` and seconds `1`.
@@ -265,7 +265,7 @@ dbwebb.assert_equal("1.8", ANSWER, True)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
-duration2 = duration(40, 21, 1)
+duration2 = Duration( 40, 21, 1)
 
 
 
@@ -292,19 +292,16 @@ dbwebb.assert_equal("2.1", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
-duration3 = duration(7, 11, 34)
+duration3 = Duration( 7, 11, 34)
 
-print("diration2: ", duration2)
-print("duration3: ", duration3)
 duration2 += duration3
-
 
 
 
 ANSWER = duration2
 
 # I will now test your answer - change false to true to get a hint.
-dbwebb.assert_equal("2.2", ANSWER, True)
+dbwebb.assert_equal("2.2", ANSWER, False)
 
 # --------------------------------------------------------------------------
 # Section 3. Extra assignments
@@ -318,19 +315,21 @@ dbwebb.assert_equal("2.2", ANSWER, True)
 # Exercise 3.1 (3 points)
 #
 # Overload the `smaller than operator(<)` in the Duration class.
-# It should return True if the duration is shorter than the other.
+# It should return True if the Duration is shorter than the other.
 #
 # Answer with `duration1<duration2`.
 #
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+duration1 = Duration( 30, 6, 13)
+duration2 = Duration( 40, 21, 1)
 
 
 
 
+ANSWER = duration1<duration2
 
-ANSWER = "Replace this text with the variable holding the answer."
 
 # I will now test your answer - change false to true to get a hint.
 dbwebb.assert_equal("3.1", ANSWER, False)
