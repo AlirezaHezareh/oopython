@@ -7,12 +7,11 @@
 
     <title>Applikation i Flask</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"  rel="stylesheet">
 
     <!-- Private stylesheet, loads last -->
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 </head>
 
 <body role="document">
@@ -29,8 +28,12 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li {%- if request.path == "/" %} class="active" {% endif %}><a href="{{ url_for('main') }}">Hem</a></li>
-                    <li {%- if request.path == "/showemployees" %} class="active" {% endif %}><a href="{{ url_for('showemployees') }}">Show</a></li>
+                    <li {%- if request.path == "/" %} class="active" {% endif %}>
+                        <a href="{{ url_for('main') }}">Hem</a>
+                    </li>
+                    <li {%- if request.path == "/about" %} class="active" {% endif %}>
+                        <a href="{{ url_for('about') }}">Om</a>
+                    </li>
                 </ul>
             </div>
         </div>

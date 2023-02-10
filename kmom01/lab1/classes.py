@@ -32,7 +32,7 @@ class Cat():
         eyecolor_str = f", has {self.eye_color} eyes "
         lives_str = f"and {self.lives_left} lives left to live."
         to_return = f"{namestr}{eyecolor_str}{lives_str}"
-        return to_return 
+        return to_return
 class Duration():
     """
     class för extercise 1.7
@@ -93,11 +93,11 @@ class Duration():
         return f"{hours_together}-{minut_together}-{secontogether}"
     def __lt__(self, other):
         """
-        funktion som gemförar två duration och ger svar i form 
+        funktion som gemförar två duration och ger svar i form
         av boolean.
         """
         if isinstance(self, Duration):
-            self = int(self.hours)
+            selff = self.hours
         if isinstance(other, Duration):
             other = int(other.hours)
-        return int(self)<int(other)
+        return int(selff)<int(other)
