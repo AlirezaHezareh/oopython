@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Stiligt! En fungerande applikation.</h1>
+        <h3>Nu inkluderas headern och footern med hjälp av Jinja2</h3>
+        <p>Jag heter {{ name }} och det här är kursen {{ course }}.</p>
+        <img src="{{ url_for('static',filename='img/leaf_256x256.png') }}" width="256">
+        <p>Bil info: {{ car.present_car() }} </p>
+    </div>
+</div>
+
+{% include 'footer.html' %}

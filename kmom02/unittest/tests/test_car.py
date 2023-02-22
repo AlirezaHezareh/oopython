@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """ Module for testing the class Car """
 
+
 import unittest
-import random
 from src.car import Car
+import random
 
 class TestCar(unittest.TestCase):
     """ Submodule for unittests, derives from unittest.TestCase """

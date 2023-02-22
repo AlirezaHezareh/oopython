@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+
+<div class="container" role="main">
+    <div class="page-header">
+        <h1>Yatzee1</h1>
+        <h3>Nu inkluderas headern och footern med hjälp av Jinja2</h3>
+        <img src="{{ url_for('static',filename='img/leaf_256x256.png') }}" width="256">
+        <p>Jag heter {{ name }} och det här är kursen {{ course }}.</p>
+        <p></p>
+    </div>
+</div>
+
+{% include 'footer.html' %}
